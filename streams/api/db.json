@@ -1,0 +1,15 @@
+{
+  "streams": [
+    {
+      "title": "t",
+      "description": "sdf",
+      "id": 1
+    },
+    {
+      "title": "test stream",
+      "description": "test steram description",
+      "userId": "112658374667538034164",
+      "id": 2
+    }
+  ]
+}

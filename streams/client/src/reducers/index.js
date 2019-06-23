@@ -1,8 +1,11 @@
 import {combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import streamReducer from './streamReducer'
 
 const INITIAL_STATE ={
     isSignedIn: null,
-    userId: null
+    userId: null,
+    streams: []
 }
 const  authReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
@@ -14,6 +17,10 @@ const  authReducer = (state = INITIAL_STATE, action) => {
             return {...state, isSignedIn: false,userId: null}
         }
 
+        /* case 'GET_STREAMS': {
+            return {...state, streams: [...streams, action.payload]}
+        } */
+
         default: {
             return state;
         } 
@@ -21,5 +28,7 @@ const  authReducer = (state = INITIAL_STATE, action) => {
 }
 
 export default combineReducers({
-    authReducer: authReducer
+    authReducer: authReducer,
+    form: formReducer,
+    streams: streamReducer
 })
