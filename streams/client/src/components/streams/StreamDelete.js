@@ -1,10 +1,13 @@
 import React from 'react';
+import Modal from '../Modal.js'
 
 class StreamDelete extends React.Component {
 
     render() {
         return (
-            <div>Stream Delete</div>
+            <div>
+                <Modal />
+            </div>
         )
     }
 }

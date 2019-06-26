@@ -42,7 +42,6 @@ class StreamList extends React.Component {
         })
     }
     render() {
-        console.log("Inside component render method")
         return (
             <div>
                 <h2>Streams</h2>
