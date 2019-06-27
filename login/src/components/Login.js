@@ -17,9 +17,21 @@ class Login extends React.Component {
 
     renderInput = ({input, label, meta}) => {
         return (
+
             <div className="field">
                 <label>{label}</label>
-                <input {...input}/>
+                <input {...input} />
+                <div style={{color:'red'}}>{this.renderError(meta)}</div>
+            </div>
+        )
+    }
+
+    renderInputPassword = ({input, label, meta}) => {
+        return (
+
+            <div className="field">
+                <label>{label}</label>
+                <input {...input} type="password"/>
                 <div style={{color:'red'}}>{this.renderError(meta)}</div>
             </div>
         )
@@ -29,12 +41,25 @@ class Login extends React.Component {
         this.props.signIn(formValues)
     }  
 
+    renderLoginError() {
+        if(this.props.login && this.props.login.error) {
+            return (
+                <div style={{color:'red', margin:'10px'}}>
+                    <h3>{this.props.login.error}</h3>
+
+                </div>
+            )
+        }
+    }
+
     render() {
+        
         return (
             <div style={{margin: '50px'}}>
+                {this.renderLoginError()}
                 <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
                     <Field name="email" label="Email" component={this.renderInput}/>
-                    <Field name="password" label="Password" type="password" component={this.renderInput}/>
+                    <Field name="password" label="Password" component={this.renderInputPassword}/>
                     <button className="ui button primary">Submit</button>
                 </form>
             </div>

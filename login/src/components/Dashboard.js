@@ -1,15 +1,24 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 
 class Dashboard extends React.Component {
 
     render() {
+        
         return(
             <div>
-                Inside Dashboard
+                <h3 style={{margin: '30px' }}> Dashboard </h3>
+                <div style={{margin: 'auto' }}>
+                    <h2>{this.props.login.token}</h2>
+                </div>
             </div>
         )
     }
 }
 
-export default Dashboard;
+const mapStateFromProps = (state) => {
+    return { login: state.login }
+}
+export default connect(mapStateFromProps)(Dashboard);
