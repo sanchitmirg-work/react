@@ -8,6 +8,7 @@ import Auth from './Auth';
 import Login from './Login';
 import Dashboard from './Dashboard';
 
+//Root Component
 const App = () => {
     return (
         <div className="ui container">

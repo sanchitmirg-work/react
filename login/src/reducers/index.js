@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-
+//Reducer function
 const logInReducer = (state = {}, action) => {
     switch(action.type) {
         case 'SIGN_IN' : {
